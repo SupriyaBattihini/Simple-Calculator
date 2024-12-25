@@ -1,0 +1,38 @@
+def calculate(num1, num2, operation):
+    """Performs arithmetic operations on two numbers.
+
+    Args:
+        num1: The first number.
+        num2: The second number.
+        operation: The operation to perform ('+', '-', '*', '/').
+
+    Returns:
+        The result of the calculation.
+    """
+
+    if operation == '+':
+        return num1 + num2
+    elif operation == '-':
+        return num1 - num2
+    elif operation == '*':
+        return num1 * num2
+    elif operation == '/':
+        if num2 == 0:
+            return "Error: Division by zero"
+        else:
+            return num1 / num2
+    else:
+        return "Invalid operation"
+
+if _name_ == "_main_":
+    while True:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        operation = input("Enter the operation (+, -, *, /): ")
+
+        result = calculate(num1, num2, operation)
+        print("Result:", result)
+
+        choice = input("Do you want to perform another calculation? (y/n): ")
+        if choice.lower() == 'n':
+            break
